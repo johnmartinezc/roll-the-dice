@@ -1,33 +1,68 @@
-const prompt = require('prompt-sync')
-({sigint: true})
-// console.log("What dice would you like to roll? \n1.Four sided\n2.six sided\n3.Eight sided\n4.Ten sided\n5.Twelve sided\n6.Twenty sided")
-console.log("Enter number sided die you wish to use")
-let kindOfDice = prompt(String(": "))
+const prompt = require('prompt-sync')({sigint: true});
 
-if( kindOfDice ===kindOfDice){
-   console.log(Math.ceil(Math.random()*kindOfDice))
+let passCode = 1234;
+
+let guess = Number(prompt("Guess the passcode: "));
+
+// if(guess === passCode){
+//     console.log("You guessed correctly!");
+// } else {
+//     console.log("WRONG!");
+// }
+
+/*
+Loop - a way to repeat the same task in your code
+While Loop - a while loop repeats a task in a program based on a condition
+
+while(condition === true){
+    //perform the code inside the while loop
 }
 
+in this case, while the guess is NOT equal to the passcode, keep prompting the user to try again
 
-// if (kindOfDice === '1'){
-//   console.log(Math.ceil(Math.random()*4))
-//   if (kindOfDice === "done"){
-// return
+while true, I will do
+*/
+while(guess !== passCode){
+    guess = Number(prompt('Try again: '));
+}
+
+// if(guess === passCode){
+//     console.log("You guessed correctly!");
 // }
-// }else if( kindOfDice === '2'){
-//   console.log(Math.ceil(Math.random()*6))
-  
-// }else if( kindOfDice === '3'){
-//   console.log(Math.ceil(Math.random()*8))
-  
-// }else if( kindOfDice === '4'){
-//   console.log(Math.ceil(Math.random()*10))
-  
-// }else if( kindOfDice === '5'){
-//   console.log(Math.ceil(Math.random()*12))
-  
-// }else if( kindOfDice === '6'){
-//   console.log(Math.ceil(Math.random()*20))
-  
-// }else {
-//   console.log("error")
+
+console.log("You guessed correctly!"); //this line only runs after the while loop condition isn't met, so in order for this line to run, passCode has to equal our guess
+
+
+let bool = true;
+
+while(bool){
+    console.log("hi!");
+} //infinite loop, will print out "hi!" forever, until control + c is used to break out of your loop
+
+
+let num = 1;
+
+while(num <= 10){
+
+    console.log(num);
+
+    // num = num + 1;
+    // num += 1;
+    num++; //same as the two lines above BUT it only works for incrementing by 1
+}
+
+while(num <= 20){
+    console.log(num);
+    num += 2;
+}
+
+let sum = 0;
+//add all numbers between 0 and 5
+num = 0;
+while(num <= 5){
+    sum = num + sum;
+    num++;
+    console.log(sum);
+}
+
+console.log(sum);
